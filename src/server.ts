@@ -1,14 +1,15 @@
 // TypeScript
 // Compiled languages: Java, GoLang, C, C++, C#, Rust => Compiling & Running,
 
-// Interpreted Languages: NodeJs, Python, PHP, Ruby   =>Running
+// Interpreted Languages: NodeJs, Python, PHP, Ruby   => Running
+
 //Type script dynamic type integration ni olib kirgan, hosil qib bergan
 // typeScript = Java script + type script elements and components
 //Error type
 // Types in JavaScript
 // prmitive - string, number, boolean,null, undefined, symbol
-// object - objects, arrays, maps
-
+// object - objects, arrays, maps, list
+//interface & type annotation
 // let box: string;
 // box = "hello";
 // box = 100; // error type string
@@ -75,27 +76,12 @@
 
 //Design pattern: Midleeware, Decorator, - butun bakend tizimini tartibga soluvchi patternlar - malum bir bo'lim qo'l
 //Types: Creational Structural Bahavioral 
+ 
+// import moment from 'moment' // Common Js => const moment = require('moment); 
 
-// G-TASK:
+//ENV 
+import dotenv from 'dotenv';
+dotenv.config();
+// console.log("PORT:", process.env.PORT);
 
-// Shunday function tuzingki unga integerlardan iborat array pass bolsin va function
-//  bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
-// MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
-
-function getHighestIndex(arr) {
-    if (Array.isArray(arr)) {
-      let max = arr[0];
-      let maxIndex = 0;
-      for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-          max = arr[i];
-          maxIndex = i;
-        }
-      }
-      return maxIndex;
-    } else {
-      return "please insert array";
-    }
-  }
-  console.log(getHighestIndex([5, 41, 55, 99, 7]));
-  console.log(getHighestIndex([6, 41, 85, 39, 71]));
+// console.log("MONGO_URL:", process.env.MONGO_URL);
