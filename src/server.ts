@@ -1,7 +1,7 @@
-// TypeScript
+// TypeScript - EXTENSION FOR NODE JS
 // Compiled languages: Java, GoLang, C, C++, C#, Rust => Compiling & Running,
 
-// Interpreted Languages: NodeJs, Python, PHP, Ruby   => Running
+// Interpreted Languages: NodeJs, Python, PHP, Ruby   => Running 
 
 //Type script dynamic type integration ni olib kirgan, hosil qib bergan
 // typeScript = Java script + type script elements and components
@@ -9,7 +9,8 @@
 // Types in JavaScript
 // prmitive - string, number, boolean,null, undefined, symbol
 // object - objects, arrays, maps, list
-//interface & type annotation
+// Types in use
+// interface & type annotation
 // let box: string;
 // box = "hello";
 // box = 100; // error type string
@@ -103,4 +104,10 @@ connect(process.env.MONGO_URL as string, {})
     })
 })
 .catch((err) => console.log('ERROR on connection MongoDB', err));
+
+// 4tpes of validation
+// front end 
+// backend kirdi chiqdi
+// backend 
+// data base 
 
