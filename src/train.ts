@@ -1,3 +1,13 @@
+/* Project Standards: 
+   - logging standards
+   - naming standards
+     function, method, variable => camel Case
+     class => Pascal Case
+     folder => kebab-
+     css => snake_case
+ - Error handling   
+ 
+*/
 // H-TASK: 
 
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida 
