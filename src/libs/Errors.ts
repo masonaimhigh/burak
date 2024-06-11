@@ -17,9 +17,10 @@ export enum Message {
 
 }
 
-class Errors extends Errors {
+class Errors extends Error {
     public code: HttpCode;
     public message: Message;
+
     constructor(statusCode: HttpCode, statusMessage: Message) {
         super();
         this.code = statusCode;

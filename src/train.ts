@@ -5,9 +5,16 @@
      class => Pascal Case
      folder => kebab-
      css => snake_case
- - Error handling   
+ - Error handling 
+ */  
  
-*/
+ /* 
+ API - Application Programming interface
+   Traditional API
+   Rest API
+   GraphQL Api
+  */
+
 // H-TASK: 
 
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida 
