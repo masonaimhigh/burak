@@ -15,8 +15,9 @@ app.use(morgan(MORGAN_FORMAT))
 /** 2-SESSIONS **/
 
 /** 3-VIEWS **/
-app.set('view', path.join(__dirname, 'views'));
-app.set('view engine', "ejsnp")
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', "ejs")
+
 /** 4-ROUTERS **/
 app.use('/admin', routerAdmin); //SSR: EJS
 app.use('/', router);       // Midlleware DP used, SPA: REACT
