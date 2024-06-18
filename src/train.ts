@@ -48,6 +48,11 @@ console.log(result);
    GraphQL Api
   */
 
+   /*
+  Traditional Frontend Devalopment => SSR (Admin)-> EJS
+  Modern Frontend development      => SPA  (User apps) => REACT Library
+   */
+
 // H-TASK: 
 
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida 
