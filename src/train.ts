@@ -48,3 +48,7 @@ console.log(longestWord);
   Modern Frontend development      => SPA  (User apps) => REACT Library
    */
 
+  /*
+    request join
+    self destroy 
+  */
