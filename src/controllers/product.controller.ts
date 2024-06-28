@@ -3,6 +3,7 @@ import Errors from "../libs/Errors";
 import { T } from "../libs/types/common";
 import ProductService from '../models/Product.service';
 
+
 const productService = new ProductService();
 
 const productController: T = {};
@@ -10,6 +11,7 @@ const productController: T = {};
 productController.getAllProducts =  async (req: Request, res: Response) => {
     try {
         console.log("getAllProducts");
+        // console.log("req.member", req.member);
         res.render("products");
     } catch(err) {
         console.log('Error, getAllProducts:', err);

@@ -15,7 +15,10 @@ routerAdmin.get('/check-me', restaurantController.checkAuthSession);
 
 
 // Product
-routerAdmin.get('/product/all', productController.getAllProducts);
+routerAdmin.get('/product/all', 
+    restaurantController.verifyRestaurant, 
+    productController.getAllProducts
+);
 routerAdmin.post("/poduct/create", productController.createNewProduct);
 routerAdmin.post("/poduct/:id", productController.updateChosenProduct);
 //User
