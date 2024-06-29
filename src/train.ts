@@ -28,14 +28,14 @@ console.log(countVowels("PRTZSW"));
  - Error handling 
  */  
  
- /* 
- API - Application Programming interface
+ /* REQUEST: types 
+ API - Application Programming interface meaning 
    Traditional API
    Rest API
    GraphQL Api
   */
 
-   /*
+   /* Frontend Development 
   Traditional Frontend Devalopment => SSR (Admin)-> EJS
   Modern Frontend development      => SPA  (User apps) => REACT Library
    */
@@ -44,3 +44,13 @@ console.log(countVowels("PRTZSW"));
     request join
     self destroy 
   */
+
+  /*
+    Validation 4 types:
+
+    frontend 
+    pipe -  not used in Burak
+    backend
+    database  
+    */
+
