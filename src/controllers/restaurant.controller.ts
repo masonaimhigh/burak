@@ -121,6 +121,7 @@ restaurantController.verifyRestaurant = (
  if(req.session?.member?.memberType === MemberType.RESTAURANT) {
     req.member = req.session.member;
     next();
+     
  } else {
     const message = Message.NOT_AUTHENTICATED;
     res.send(
