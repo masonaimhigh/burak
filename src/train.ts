@@ -1,21 +1,24 @@
 /*
 K-TASK: 
 
-Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
-MASALAN: countVowels("string") return 1;
+Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni 
+chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
 */
 
-function countVowels(str: string): number {
-    const vowels: Set<string> = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']); 
-    return str.split('').reduce((count, char) => {
-        return vowels.has(char) ? count + 1 : count;
-    }, 0);
+function reverseSentence(sentence: string): string {
+
+  const reversedSentence = sentence.split('').reverse().join('');
+  
+  const words = reversedSentence.split(' ');
+  return words.reverse().join(' ');
 }
 
+// Example 
+const sentence = "we like coding!";
+const reversedSentence = reverseSentence(sentence);
+console.log(reversedSentence);  
 
-console.log(countVowels("string")); 
-console.log(countVowels("Hello MIT!")); 
-console.log(countVowels("PRTZSW")); 
 
 
 /* Project Standards: 
