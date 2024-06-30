@@ -1,5 +1,5 @@
 /*
-K-TASK: 
+LAdded-TASK: 
 
 Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni 
 chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
