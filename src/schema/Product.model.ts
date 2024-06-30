@@ -3,12 +3,12 @@ import { ProductCollection, ProductSize, ProductStatus, ProductVolume } from "..
 
 const productSchema = new Schema(
     {
-        ProductStatus: {
+        productStatus: {
             type: String,
             enum:ProductStatus,
             default: ProductStatus.PAUSE,
         },
-        ProductCollection: {
+        productCollection: {
             type: String,
             enum:ProductCollection,
             required:true,
@@ -27,14 +27,14 @@ const productSchema = new Schema(
             type: Number,
             required: true,
         },
-        ProductSize: {
+        productSize: {
             type: String,
             enum:ProductSize,
             default: ProductSize.NORMAL,
         },
 
         ProductVolume: {
-            type: String,
+            type: Number,
             enum:ProductVolume,
             default: ProductVolume.ONE,
         },
@@ -62,4 +62,5 @@ const productSchema = new Schema(
 productSchema.index(
      {productName: 1, productSize: 1, ProductVolume: 1},
      {unique: true})
+     
 export default mongoose.model('Product', productSchema);
