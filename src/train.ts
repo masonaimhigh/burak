@@ -1,31 +1,23 @@
 /*
-LAdded-TASK: 
+O-TASK:
 
-M-TASK: 
-
-Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi
- har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan
-  object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
-MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1},
- {number: 2, square: 4}, {number: 3, square: 9}];
+Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array 
+ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
 */
-type NumberSquare = {
-  number: number,
-  square: number
-};
 
-function getSquareNumbers(numbers: number[]): NumberSquare[] {
-  return numbers.map(num => ({
-      number: num,
-      square: num * num
-  }));
+
+function calculateSumOfNumbers(a: any[]) {
+  let total = 0;
+  for(let i = 0; i < a.length; i++){
+    if(typeof a[i] === 'number'){
+      total += a[i];
+    }
+  }
+  return total;
 }
 
-// Example 
-const result = getSquareNumbers([1, 2, 3]);
-console.log(result);
-
-
+console.log(calculateSumOfNumbers(["abc", true, false, undefined, 10, null, 5]));
 
 
 
