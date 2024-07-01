@@ -8,7 +8,7 @@ import  makeUploader from './libs/utils/uploader';
 routerAdmin.get('/', restaurantController.goHome);
 routerAdmin
 .get('/login', restaurantController.getLogin)
-.post('/login', restaurantController.processLogin);
+.post('/login', restaurantController.processLogin);                
 routerAdmin.get('/signup', restaurantController.getSignup) 
 .post(
     "/signup", 
