@@ -1,23 +1,39 @@
 /*
-O-TASK:
+P-TASK:
 
-Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array 
-ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
-MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
+Shunday function yozing, u object qabul qilsin va arrayni object 
+arrayga otkazib arrayni qaytarsin qaytarsin.
+MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 */
-
-
-function calculateSumOfNumbers(a: any[]) {
-  let total = 0;
-  for(let i = 0; i < a.length; i++){
-    if(typeof a[i] === 'number'){
-      total += a[i];
-    }
-  }
-  return total;
+function objectToArray(obj: { [key: string]: any }): [string, any][] {
+  return Object.entries(obj);
 }
 
-console.log(calculateSumOfNumbers(["abc", true, false, undefined, 10, null, 5]));
+
+const input = { a: 10, b: 20 };
+const result = objectToArray(input);
+console.log(result);
+
+/*
+Q-TASK:
+
+Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object,
+ ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin.
+MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true; 
+hasProperty({name: "BMW", model: "M3"}, "year") return false
+*/
+
+/*
+
+function hasProperty(obj: { [key: string]: any }, prop: string): boolean {
+  return obj.hasOwnProperty(prop);
+}
+
+// Example 
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  // false
+
+*/
 
 
 
