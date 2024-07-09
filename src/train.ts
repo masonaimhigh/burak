@@ -1,23 +1,54 @@
 /*
-Q-TASK:
 
-Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object, 
-ikkinchisi string. Agar string parametr objectni propertysi bolsa true 
-bolmasa false qaytarsin.
-MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true; 
-hasProperty({name: "BMW", model: "M3"}, "year") return false
+
+R-TASK:
+
+Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda 
+pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
+MASALAN: calculate("1+3") return 4;
 */
 
-function hasProperty(obj: object, prop: string): boolean {
+function calculate(expression: string): number {
+  expression = expression.replace(/\s+/g, '');
 
-  const keys = Object.keys(obj);
+  
+  const numbers: number[] = [];
+  const operators: string[] = [];
+  let currentNumber = '';
 
-  return keys.includes(prop);
+  for (let char of expression) {
+      if (!isNaN(Number(char))) {
+          currentNumber += char; 
+      } else {
+          numbers.push(Number(currentNumber)); 
+          currentNumber = ''; 
+          operators.push(char); 
+      }
+  }
+  if (currentNumber !== '') {
+      numbers.push(Number(currentNumber));
+  }
+
+  let result = numbers[0];
+  for (let i = 0; i < operators.length; i++) {
+      switch (operators[i]) {
+          case '+':
+              result += numbers[i + 1];
+              break;
+          case '-':
+              result -= numbers[i + 1];
+              break;
+          default:
+              throw new Error('Raqam kiriting');
+      }
+  }
+
+  return result;
 }
 
-// Example:
-console.log(hasProperty({name: "BMW", model: "M3"}, "model")); 
-console.log(hasProperty({name: "BMW", model: "M3"}, "year"));  
+console.log(calculate("1+3")); 
+console.log(calculate("10+20-5")); 
+
 
 
 
