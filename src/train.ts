@@ -1,53 +1,27 @@
 /*
 
+S-TASK
+Shunday function yozing, u numberlardan tashkil topgan array qabul 
+qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
+MASALAN: missingNumber([3, 0, 1]) return 2
 
-R-TASK:
-
-Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda 
-pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
-MASALAN: calculate("1+3") return 4;
 */
 
-function calculate(expression: string): number {
-  expression = expression.replace(/\s+/g, '');
-
-  
-  const numbers: number[] = [];
-  const operators: string[] = [];
-  let currentNumber = '';
-
-  for (let char of expression) {
-      if (!isNaN(Number(char))) {
-          currentNumber += char; 
-      } else {
-          numbers.push(Number(currentNumber)); 
-          currentNumber = ''; 
-          operators.push(char); 
-      }
-  }
-  if (currentNumber !== '') {
-      numbers.push(Number(currentNumber));
-  }
-
-  let result = numbers[0];
-  for (let i = 0; i < operators.length; i++) {
-      switch (operators[i]) {
-          case '+':
-              result += numbers[i + 1];
-              break;
-          case '-':
-              result -= numbers[i + 1];
-              break;
-          default:
-              throw new Error('Raqam kiriting');
-      }
-  }
-
-  return result;
+function missingNumber(nums: number[]): number {
+    const n = nums.length;
+    let sum = 0;
+    for (let num of nums) {
+        sum += num;
+    }
+    const resultSum = n * (n + 1) / 2;
+    return resultSum - sum;
 }
 
-console.log(calculate("1+3")); 
-console.log(calculate("10+20-5")); 
+
+console.log(missingNumber([3, 0, 1])); 
+console.log(missingNumber([0, 1,]));   
+console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); 
+
 
 
 
