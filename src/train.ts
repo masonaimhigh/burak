@@ -1,26 +1,38 @@
 /*
 
-S-TASK
-Shunday function yozing, u numberlardan tashkil topgan array qabul 
-qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
-MASALAN: missingNumber([3, 0, 1]) return 2
+T-TASK:
+
+Shunday function yozing, u sonlardan tashkil topgan 2 ta array qabul qilsin va 
+ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin
+MASALAN: mergeSortedArrays([0,3,4,31], [4,6,30]); return [0,3,4,4,6,30,31]
 
 */
 
-function missingNumber(nums: number[]): number {
-    const n = nums.length;
-    let sum = 0;
-    for (let num of nums) {
-        sum += num;
-    }
-    const resultSum = n * (n + 1) / 2;
-    return resultSum - sum;
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+
+  if (arr1.length === 0) return arr2;
+  if (arr2.length === 0) return arr1;
+
+  const result: number[] = [];
+  let i = 0, j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+      if (arr1[i] < arr2[j]) {
+          result.push(arr1[i]);
+          i++;
+      } else {
+          result.push(arr2[j]);
+          j++;
+      }
+  }
+
+  return result.concat(arr1.slice(i)).concat(arr2.slice(j));
 }
 
-
-console.log(missingNumber([3, 0, 1])); 
-console.log(missingNumber([0, 1,]));   
-console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); 
+const array1 = [0, 3, 4, 31, 90];
+const array2 = [4, 6, 30];
+const result = mergeSortedArrays(array1, array2);
+console.log(result); 
 
 
 
