@@ -7,7 +7,7 @@ ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin
 MASALAN: mergeSortedArrays([0,3,4,31], [4,6,30]); return [0,3,4,4,6,30,31]
 
 */
-
+/*
 function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
 
   if (arr1.length === 0) return arr2;
@@ -33,8 +33,29 @@ const array1 = [0, 3, 4, 31, 90];
 const array2 = [4, 6, 30];
 const result = mergeSortedArrays(array1, array2);
 console.log(result); 
+*/
 
+// U-TASK:
 
+// Shunday function yozing, uni number parametri bolsin va 0 dan berilgan 
+// parametrgacha bolgan oraliqdagi faqat toq sonlar nechtaligini return qilsin
+// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+function sumOdds(n: number): number {
+  let oddCount = 0;
+
+  for (let i = 0; i < n; i++) {
+      if (i % 2 !== 0) {
+          oddCount++;
+      }
+  }
+
+  return oddCount;
+}
+
+console.log(sumOdds(9));
+console.log(sumOdds(11)); 
+console.log(sumOdds(13)); 
 
 
 
