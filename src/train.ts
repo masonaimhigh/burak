@@ -9,28 +9,17 @@ MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9]
 
 */
 
-function chunkArray<T>(array: T[], size: number): T[][] {
-  if (size <= 0) {
-      throw new Error("Kiritilgan son 0 dan katta bolishi kerak");
+function chunkArray(input1: number[], input2: number): number[][] {
+  const chunkedArray: number[][] = [];
+ 
+  for (let i = 0; i < input1.length; i += input2) {
+    const chunk: number[] = input1.slice(i, i + input2);
+    chunkedArray.push(chunk);
   }
-  
-  const result: T[][] = [];
-  
-  for (let i = 0; i < array.length; i += size) {
-      result.push(array.slice(i, i + size));
-  }
-  
-  return result;
+  return chunkedArray;
 }
 
-
-const inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const chunkSize = 4;
-const chunkedArray = chunkArray(inputArray, chunkSize);
-
-console.log(chunkedArray); 
-
-
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
 
 
 
