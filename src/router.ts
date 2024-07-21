@@ -2,22 +2,18 @@ import express from 'express';
 const router = express.Router();
 import memberController from './controllers/member.controller';
 
-router.post('/login', memberController.login);
-router.post("/signup", memberController.signup);
+// Member 
+router.post('/member/login', memberController.login);
+router.post("/member/signup", memberController.signup);
+router.get("/member/detail", memberController.verifyAuth);
 
-//  router.get('/', (req: Request, res: Response) => {
-//     res.send('Home page')
-//  })
-// router.get('/', memberController.goHome);
+// Product 
 
-// router.get('/login', memberController.getLogin);
-//  router.get('/login', (req: Request, res: Response) => {
-//     res.send('Login page')
-//  })
+// Order 
 
-// router.get('/signup', memberController.getSignup);
-//  router.get('/signup', (req: Request, res: Response) => {
-//     res.send('Signup page')
-//  })
+
+
+
+
 
  export default router;
