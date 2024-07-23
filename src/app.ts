@@ -20,6 +20,7 @@ const store = new MongoDBStore({
 const app = express();
 // console.log("__dirname:",__dirname);
 app.use(express.static(path.join(__dirname, 'public'))); // Middleware DP: Folder Client (app.use)
+app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({extended: true})); // Middleware Traditional API
 app.use(express.json()); // Middleware DP: Rest API
 app.use(cookieParser());
