@@ -15,7 +15,7 @@ const viewSchema = new Schema(
        ref: "Member", 
   },
 
-    ViewRefId: {
+    viewRefId: {
        type: Schema.Types.ObjectId,
        required: true,
 
