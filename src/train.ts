@@ -1,27 +1,20 @@
 /*
 
-Y-TASK:
+ZB-TASK:
 
- Z-TASK:
-
-Shunday function yozing, uni sonlardan tashkil topgan array qabul qilsin.
-Function arraydagi juft sonlarni yigindisini qaytarsin
-MASALAN: sumEvens([1,2,3]) return 2 
+Shunday function yozing, uni 2 ta number parametri bolsin va berilgan sonlar
+ orasidan random raqam return qilsin 
+MASALAN: randomBetween(30, 50) return 45
 
 */
 
-function sumEvens(numbers: number[]): number {
-  return numbers.reduce((sum, num) => {
-      if (num % 2 === 0) {
-          return sum + num;
-      }
-      return sum;
-  }, 0);
+function randomBetween(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const randomNum = randomBetween(30, 50);
+console.log(randomNum); 
 
-console.log(sumEvens([1, 2, 3])); 
-console.log(sumEvens([1, 2, 3, 4])); 
 
 
 
