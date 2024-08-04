@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from 'express';
 import path from 'path';
 import router from './router';
@@ -18,11 +19,16 @@ const store = new MongoDBStore({
 });
 /** 1-ENTRANCE **/
 const app = express();
-// console.log("__dirname:",__dirname);
-app.use(express.static(path.join(__dirname, 'public'))); // Middleware DP: Folder Client (app.use)
+app.use(express.static(path.join(__dirname, 'public'))); 
 app.use("/uploads", express.static("./uploads"));
-app.use(express.urlencoded({extended: true})); // Middleware Traditional API
-app.use(express.json()); // Middleware DP: Rest API
+app.use(express.urlencoded({extended: true})); 
+app.use(express.json()); 
+app.use(
+  cors({
+    credentials: true, 
+    origin: true
+    })
+  );
 app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT))
 

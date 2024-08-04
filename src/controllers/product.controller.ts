@@ -20,21 +20,12 @@ productController.getProducts = async (req: Request, res: Response) => {
             page: Number(page),
             limit: Number(limit),
         }
-
         if (productCollection) {
           inquiry.productCollection = productCollection as ProductCollection;
         }
         if(search) inquiry.search = String(search);
 
         const result = await productService.getProducts(inquiry);
-
-        // console.log(`page: ${page}, order: ${order}`);
-        // console.log(req.query);
-        // const query = req.query;
-        // console.log("req.query:", query );
-
-        // const params = req.params;
-        // console.log("req.params:", params );
        
         res.status(HttpCode.OK).json(result);
     } catch(err) {
